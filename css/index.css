@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #404040;
+  font-size: 1rem;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+}
+
+/* ---------- 
+TYPOGRAPHY 
+------------ */
+h1 {
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+h1 + p {
+  color: #f18119;
+  font-size: 1.3125rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.3125rem;
+  margin: 0;
+}
+
+h2 + p {
+  color: #f18119;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 900;
+  margin-top: 0;
+}
+
+strong {
+  font-weight: 900;
+}
+
+small {
+  font-size: 0.625rem;
+}
+
+.top-text {
+  color: #f18119;
+  font-size: 0.625rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-top: solid 5px #f18119;
+  border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
+  margin: 0;
+  padding-top: 2px;
+  order: -1;
+}
+
+.fine-print {
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+}
+
+/* ---------- 
+INTRO SECTION 
+------------ */
+.intro {
+  /* background-image: url(images/ribs.jpg), linear-gradient(45deg,red, blue); */
+
+  background-image: url(../images/ribs.jpg);
+  background-color: #404040;
+  background-blend-mode: multiply;
+  /* background-image: url(../images/dark-ribs.jpg); */
+  background-size: cover;
+  background-position: center;
+  padding: 0 0.5em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+}
+
+/* ------------------ 
+MAIN CONTENT SECTION 
+-------------------- */
+
+.main-content {
+  padding: 2em 1em;
+}
+
+/* This is one way (the simpler way) to deal with larger screen sizes: 
+*/
+.intro > *,
+.main-content > * {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* This is another  (more complicated) way to deal with larger screen sizes. 
+We had to add a div with the class of "container" to 
+.intro and .main-content for this solution */
+
+/* .container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.container-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+} */
+
+/* ------------- 
+FORM
+-------------- */
+.email-collector {
+  width: 80%;
+  max-width: 300px;
+}
+
+input,
+.btn {
+  width: 100%;
+  border-radius: 6px;
+}
+
+input {
+  margin-bottom: 0.75em;
+  padding: 0.25em;
+  font-family: inherit;
+  text-align: inherit;
+  border: 1px solid #404040;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+input:focus {
+  transform: scale(1.1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.5em 1.5em;
+  border: none;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to left, #ff713b, #ffa51d);
+  color: #fff;
+  transform: scale(1);
+  transition: transform 1s;
+}
+/* Note: Background images (like gradients) can NOT be transitioned 
+but simple background colors can be! */
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: scale(1.3);
+}
+
+/* ------------- 
+MEDIA QUERIES 
+-------------- */
+
+@media (min-width: 500px) {
+  body {
+    font-size: 1.125rem;
+    display: flex;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2,
+  h1 + p {
+    font-size: 1.75rem;
+  }
+
+  .intro,
+  .main-content {
+    width: 50%;
+    min-height: 100vh;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* .container-intro {
+    height: 100%;
+  } */
+}
